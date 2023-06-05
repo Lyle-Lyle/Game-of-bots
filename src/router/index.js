@@ -1,16 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PkIndexView from '../views/pk/PkIndexView.vue'
 import RecordIndexView from '../views/record/RecordIndexView.vue'
-import RankListIndexView from '../views/ranklist/RankListIndexView.vue'
+import RanklistIndexView from '../views/ranklist/RankListIndexView.vue'
 import UserBotIndexView from '../views/user/bots/UserBotIndexView.vue'
 import NotFound from '../views/error/NotFound.vue'
 
-// 从上往下匹配
 const routes = [
   {
     path: "/",
     name: "home",
-    redirect: "/pk/",
+    redirect: "/pk/"
   },
   {
     path: "/pk/",
@@ -25,7 +24,7 @@ const routes = [
   {
     path: "/ranklist/",
     name: "ranklist_index",
-    component: RankListIndexView,
+    component: RanklistIndexView,
   },
   {
     path: "/user/bot/",
@@ -38,17 +37,14 @@ const routes = [
     component: NotFound,
   },
   {
-    path: "/catchAll(.*)",
+    path: "/:catchAll(.*)",
     redirect: "/404/"
-  },
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: routes
+  routes
 })
 
-
 export default router
-
-

@@ -9,12 +9,10 @@
 </template>
 
 <script>
-
 </script>
 
-
 <style scoped>
-.content-field {
+div.content-field {
   margin-top: 20px;
 }
 </style>
